@@ -1,0 +1,74 @@
+body {
+  /*margin: 0;
+  padding: 0;*/
+  background: #f5f5f0;
+}
+div.main-body {
+  display: grid;
+  grid-template-columns: minmax(300px, auto) 1fr;
+  grid-gap: 20px;
+  grid-template-areas: "navbar mainContent";
+  background: #f5f5f0;
+}
+nav#navbar .nav-link {
+  color: #e65c00;
+  font-weight: bold;
+  font-family: "Fresca", sans-serif;
+}
+nav#navbar {
+  grid-area: navbar;
+  position: fixed;
+  color: #00802b;
+  font-family: "Fresca", sans-serif;
+}
+
+nav#navbar a {
+  display: block;
+  /*border: 1px solid black;*/
+  padding: 5px;
+  margin: 10px 0;
+  text-decoration: none;
+  color: black;
+}
+
+main#main-doc {
+  grid-area: mainContent;
+}
+
+header {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Fresca", sans-serif;
+}
+p {
+  line-height: 1.5em;
+  font-family: "Source Sans Pro", sans-serif;
+}
+code {
+  background-color: #ccc;
+  padding: 20px;
+  display: block;
+}
+span {
+  background: #ccc;
+  font-family: "Source Sans Pro", sans-serif;
+}
+li {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.5em;
+}
+@media screen and (max-width: 750px) {
+  div.main-body {
+    grid-template-columns: 1fr;
+    grid-template-areas: "navbar" "mainContent";
+  }
+  nav#navbar {
+    position: inherit;
+  }
+}
+footer {
+  margin-top: 65px;
+}
+/*#wiki {
+  text-decoration-line: none;
+}*/

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="Description"
+      content="PHP programming language, 
+    world wide web technology,technical information"
+    />
+    <meta name="theme-color" content="#317EFB" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="php-el.png" />
+    <title>PHP Technical Documentation Page</title>
+  </head>
+  <body>
+    <div class="main-body">
+      <nav id="navbar">
+        <header>
+          PHP Documentation
+        </header>
+        <a href="#PHP" class="nav-link">PHP Introduction</a>
+        <a href="#Syntax" class="nav-link">Syntax</a>
+        <a href="#Data_types" class="nav-link">Data types</a>
+        <a href="#Functions" class="nav-link">Functions</a>
+        <a href="#PHP_Objects" class="nav-link">PHP Objects</a>
+        <a href="#Reference" class="nav-link">Reference</a>
+      </nav>
+
+      <main id="main-doc">
+        <section class="main-section" id="PHP">
+          <header>
+            PHP
+          </header>
+          <p>
+            PHP: Hypertext Preprocessor (or simply PHP) is a general-purpose
+            programming language originally designed for web development. It was
+            originally created by Rasmus Lerdorf in 1994; the PHP reference
+            implementation is now produced by The PHP Group. PHP originally
+            stood for Personal Home Page, but it now stands for the recursive
+            initialism PHP: Hypertext Preprocessor.
+          </p>
+          <ul>
+            <li>
+              PHP code may be executed: with a command line interface (CLI),
+              embedded into HTML code,
+            </li>
+            <li>
+              or it can be used in combination with various web template
+              systems, web content management systems, and web frameworks.
+            </li>
+          </ul>
+          <p>
+            PHP code is usually processed by a PHP interpreter implemented as a
+            module in a web server or as a Common Gateway Interface (CGI)
+            executable. The web server combines the results of the interpreted
+            and executed PHP code, which may be any type of data, including
+            images, with the generated web page. PHP can be used for many
+            programming tasks outside of the web context, such as standalone
+            graphical applications and robotic drone control. The standard PHP
+            interpreter, powered by the Zend Engine, is free software released
+            under the PHP License. PHP has been widely ported and can be
+            deployed on most web servers on almost every operating system and
+            platform, free of charge. The PHP language evolved without a written
+            formal specification or standard until 2014, with the original
+            implementation acting as the de facto standard which other
+            implementations aimed to follow. Since 2014, work has gone on to
+            create a formal PHP specification.
+          </p>
+        </section>
+        <br />
+        <br />
+        <section class="main-section" id="Syntax">
+          <header>Syntax</header>
+          <p>
+            The following "Hello, World!" program is written in PHP code
+            embedded in an HTML document:
+          </p>
+          <code>
+            &lt;!DOCTYPE html&gt;<br />
+            &lt;title&gt;PHP "Hello, World!" program&lt;/title&gt;<br />
+            &lt;?php echo '&lt;p&gt;Hello World&lt;/p&gt;'; ?></code
+          >
+          <p>
+            However, as no requirement exists for PHP code to be embedded in
+            HTML, the simplest version of Hello, World! may be written like
+            this, with the closing tag omitted as preferred in files containing
+            pure PHP code:
+          </p>
+          <code>&lt;?='Hello world';</code>
+          <p>
+            The PHP interpreter only executes PHP code within its delimiters.
+            Anything outside its delimiters is not processed by PHP, although
+            non-PHP text is still subject to control structures described in PHP
+            code. The most common delimiters are:
+            <span>&lt;?php</span> to open and: <span>?&gt;</span> to close PHP
+            sections. The shortened form: <span>&lt;?</span> also exists. This
+            short delimiter makes script files less portable, since support for
+            them can be disabled in the local PHP configuration and it is
+            therefore discouraged; there is no recommendation against the echo
+            short tag <span>&lt;?=</span>. Prior to PHP 5.4.0, this short syntax
+            for: <span>echo()</span> only works with the:
+            <span>short_open_tag</span>
+            configuration setting enabled, while for PHP 5.4.0 and later it is
+            always available. The purpose of all these delimiters is to separate
+            PHP code from non-PHP content, such as JavaScript code or HTML
+            markup. The first form of delimiters:,
+            <span>&lt;?php</span> and <span>?></span>, in XHTML and other XML
+            documents, creates correctly formed XML processing instructions.
+            This means that the resulting mixture of PHP code and other markup
+            in the server-side file is itself well-formed XML. Variables are
+            prefixed with a dollar symbol, and a type does not need to be
+            specified in advance. PHP 5 introduced type hinting that allows
+            functions to force their parameters to be objects of a specific
+            class, arrays, interfaces or callback functions. However, before PHP
+            7.0, type hints could not be used with scalar types such as integer
+            or string. Unlike function and class names, variable names are case
+            sensitive. Both double-quoted ("") and heredoc strings provide the
+            ability to interpolate a variable's value into the string. PHP
+            treats newlines as whitespace in the manner of a free-form language,
+            and statements are terminated by a semicolon. PHP has three types of
+            comment syntax: <span>/* */</span> marks block and inline comments;
+            <span>//</span> or <span>#</span> are used for one-line comments.
+            The <span>echo</span> statement is one of several facilities PHP
+            provides to output text. In terms of keywords and language syntax,
+            PHP is similar to the C style syntax. <span>if</span> conditions,
+            <span>for</span> and <span>while</span>
+            loops, and function returns are similar in syntax to languages such
+            as C, C++, C#, Java and Perl.
+          </p>
+        </section>
+        <br />
+        <br />
+        <section class="main-section" id="Data_types">
+          <header>
+            Data types
+          </header>
+          <p>
+            PHP stores integers in a platform-dependent range, either a 64-bit
+            or 32-bit or 128-bit signed integer equivalent to the C-language
+            long type. Unsigned integers are converted to signed values in
+            certain situations; this behavior is different from other
+            programming languages. Integer variables can be assigned using
+            decimal (positive and negative), octal, hexadecimal, and binary
+            notations. Floating point numbers are also stored in a
+            platform-specific range. They can be specified using floating point
+            notation, or two forms of scientific notation. PHP has a native
+            Boolean type that is similar to the native Boolean types in Java and
+            C++. Using the Boolean type conversion rules, non-zero values are
+            interpreted as true and zero as false, as in Perl and C++. The null
+            data type represents a variable that has no value;
+            <span>NULL</span> is the only allowed value for this data type.
+            Variables of the "resource" type represent references to resources
+            from external sources. These are typically created by functions from
+            a particular extension, and can only be processed by functions from
+            the same extension; examples include file, image, and database
+            resources. Arrays can contain elements of any type that PHP can
+            handle, including:
+          </p>
+          <ul>
+            <li>resources,</li>
+            <li>objects,</li>
+            <li>and even other arrays.</li>
+          </ul>
+          <p>
+            Order is preserved in lists of values and in hashes with both keys
+            and values, and the two can be intermingled. PHP also supports
+            strings, which can be used with:
+          </p>
+          <ul>
+            <li>single quotes,</li>
+            <li>double quotes,</li>
+            <li>nowdoc or heredoc syntax.</li>
+          </ul>
+          <p>
+            The Standard PHP Library (SPL) attempts to solve standard problems
+            and implements efficient data access interfaces and classes.
+          </p>
+        </section>
+        <br />
+        <br />
+        <section class="main-section" id="Functions">
+          <header>
+            Functions
+          </header>
+          <p>
+            PHP defines a large array of functions in the core language and many
+            are also available in various extensions; these functions are well
+            documented in the online PHP documentation. However, the built-in
+            library has a wide variety of naming conventions and associated
+            inconsistencies, as described under history above. Custom functions
+            may be defined by the developer:
+          </p>
+          <code
+            >function myAge(int $birthYear):string {
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;// calculate the age by subtracting
+            the birth year from the current year. <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;$yearsOld = date('Y') - $birthYear; <br />
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;// return the age in a descriptive string.
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return $yearsOld . ' year' . ($yearsOld != 1
+            ? 's' : ''); <br />
+            } <br />
+            <br />
+            echo 'I am currently ' . myAge(1995) . ' old.';</code
+          >
+          <p>
+            In 2019, the output of the above sample program is 'I am currently
+            24 years old.' In lieu of function pointers, functions in PHP can be
+            referenced by a string containing their name. In this manner, normal
+            PHP functions can be used, for example, as callbacks or within
+            function tables. User-defined functions may be created at any time
+            without being prototyped. Functions may be defined inside code
+            blocks, permitting a run-time decision as to whether or not a
+            function should be defined. There is a
+            <span>function_exists</span> function that determines whether a
+            function with a given name has already been defined. Function calls
+            must use parentheses, with the exception of zero-argument class
+            constructor functions called with the PHP operator <span>new</span>,
+            in which case parentheses are optional. Until PHP 5.3, support for
+            anonymous functions and closures did not exist in PHP. While
+            <span>create_function()</span> exists since PHP 4.0.1, it is merely
+            a thin wrapper around <span>eval()</span> that allows normal PHP
+            functions to be created during program execution. PHP 5.3 added
+            syntax to define an anonymous function or "closure" which can
+            capture variables from the surrounding scope:
+          </p>
+          <code
+            >function getAdder($x) { <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return function($y) use ($x) { <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return $x + $y;
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;}; <br />
+            } <br />
+            <br />
+            $adder = getAdder(8); <br />
+            echo $adder(2); // prints "10"</code
+          >
+          <p>
+            In the example above, <span>getAdder()</span> function creates a
+            closure using passed argument <span>$x</span> (the keyword
+            <span>use</span> imports a variable from the lexical context), which
+            takes an additional argument <span>$y</span>, and returns the
+            created closure to the caller. Such a function is a first-class
+            object, meaning that it can be stored in a variable, passed as a
+            parameter to other functions, etc. Unusually for a dynamically typed
+            language, PHP supports type declarations on function parameters,
+            which are enforced at runtime. This has been supported for classes
+            and interfaces since PHP 5.0, for arrays since PHP 5.1, for
+            "callables" since PHP 5.4, and scalar (integer, float, string and
+            boolean) types since PHP 7.0. PHP 7.0 also has type declarations for
+            function return types, expressed by placing the type name after the
+            list of parameters, preceded by a colon. For example, the
+            <span>getAdder</span>
+            function from the earlier example could be annotated with types like
+            so in PHP 7:
+          </p>
+          <code
+            >function getAdder(int $x):Closure { <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return function(int $y) use ($x):int {
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return $x + $y;
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;}; <br />
+            } <br />
+            <br />
+            $adder = getAdder(8); <br />
+            echo $adder(2); // prints "10" <br />
+            echo $adder(null); // throws an exception because an incorrect type
+            was passed <br />
+            $adder = getAdder([]); // would also throw an exception</code
+          >
+          <p>
+            By default, scalar type declarations follow weak typing principles.
+            So, for example, if a parameter's type is <span>int</span>, PHP
+            would allow not only integers, but also:
+          </p>
+          <ul>
+            <li>convertible numeric strings,</li>
+            <li>floats,</li>
+            <li>booleans</li>
+          </ul>
+          <p>
+            to be passed to that function, and would convert them. However, PHP
+            7 has a "strict typing" mode which, when used, disallows such
+            conversions for function calls and returns within a file.
+          </p>
+        </section>
+        <br />
+        <br />
+        <section class="main-section" id="PHP_Objects">
+          <header>
+            PHP Objects
+          </header>
+          <p>
+            Basic object-oriented programming functionality was added in PHP 3
+            and improved in PHP 4. This allowed for PHP to gain further
+            abstraction, making creative tasks easier for programmers using the
+            language. Object handling was completely rewritten for PHP 5,
+            expanding the feature set and enhancing performance. In previous
+            versions of PHP, objects were handled like value types. The drawback
+            of this method was that code had to make heavy use of PHP's
+            "reference" variables if it wanted to modify an object it was passed
+            rather than creating a copy of it. In the new approach, objects are
+            referenced by handle, and not by value. PHP 5 introduced private and
+            protected member variables and methods, along with abstract classes,
+            final classes, abstract methods, and final methods. It also
+            introduced a standard way of declaring constructors and destructors,
+            similar to that of other object-oriented languages such as C++, and
+            a standard exception handling model. Furthermore, PHP 5 added
+            interfaces and allowed for multiple interfaces to be implemented.
+            There are special interfaces that allow objects to interact with the
+            runtime system. Objects implementing ArrayAccess can be used with
+            array syntax and objects implementing Iterator or IteratorAggregate
+            can be used with the <span>foreach</span> language construct. There
+            is no virtual table feature in the engine, so static variables are
+            bound with a name instead of a reference at compile time. If the
+            developer creates a copy of an object using the reserved word
+            <span>clone</span>, the Zend engine will check whether a
+            <span>__clone()</span> method has been defined. If not, it will call
+            a default <span>__clone()</span> which will copy the object's
+            properties. If a <span>__clone()</span> method is defined, then it
+            will be responsible for setting the necessary properties in the
+            created object. For convenience, the engine will supply a function
+            that imports the properties of the source object, so the programmer
+            can start with a by-value replica of the source object and only
+            override properties that need to be changed. The following is a
+            basic example of object-oriented programming in PHP:
+          </p>
+          <code
+            >1 &lt;?php <br />
+            2 abstract class User { <br />
+            3 &nbsp;public string $name; <br />
+            4 <br />
+            5 &nbsp;public function __construct(string $name) { <br />
+            6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this->name = $name; <br />
+            7 &nbsp;} <br />
+            8 <br />
+            9 &nbsp;public function greet():string { <br />
+            10 &nbsp;&nbsp;&nbsp;&nbsp;return "Hello, my name is " .
+            $this->name; <br />
+            11 } <br />
+            12 <br />
+            13 &nbsp;abstract public function job():string; <br />
+            14 } <br />
+            15 <br />
+            16 class Student extends User { <br />
+            17 &nbsp;public string $course; <br />
+            18 <br />
+            19 &nbsp;public function __construct(string $name, string $course) {
+            <br />
+            20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this->course = $course; <br />
+            21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent::__construct($name); <br />
+            22 &nbsp;} <br />
+            23 <br />
+            24 &nbsp;public function job():string {
+            <br />
+            25 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "I learn " . $this->course;
+            <br />
+            26 &nbsp;} <br />
+            27 } <br />
+            28 <br />
+            29 class Teacher extends User { <br />
+            30 &nbsp;public array $teachingCourses; <br />
+            31 <br />
+            32 &nbsp;public function__construct(string $name,
+            string...$teachingCourses) { <br />
+            33 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this->teachingCourses =
+            $teachingCourses; <br />
+            34 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent::__construct($name); <br />
+            35 &nbsp;} <br />
+            36 <br />
+            37 &nbsp;public function job():string { <br />
+            38 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "I teach " . implode(", ",
+            $this->teachingCourses); <br />
+            39 &nbsp;} <br />
+            40 } <br />
+            41 <br />
+            42 $students = [ <br />
+            43 &nbsp;new Student("Alice", "Computer Science"), <br />
+            44 &nbsp;new Student("Bob", "Computer Science"), <br />
+            45 &nbsp;new Student("Charlie", "Business Studies"), <br />
+            46 ]; <br />
+            47 $teachers = [ <br />
+            48 &nbsp;new Teacher("Dan", "Computer Science", "Information
+            Security"),
+            <br />
+            49 &nbsp;new Teacher("Erin", "Computer Science", "3D Graphics
+            Programming"), <br />
+            50 &nbsp;new Teacher("Frankie", "Online Marketing", "Business
+            Studies", "E-commerce"), <br />
+            51 ]; <br />
+            52 <br />
+            53 echo "Students: \n"; <br />
+            54 foreach($students as $student) { <br />
+            55 &nbsp;echo $student->greet() . ", " . $student->job() ."\n";
+            <br />
+            56 } <br />
+            57 <br />
+            58 echo "Teachers: \n"; <br />
+            59 foreach($teachers as $teacher) { <br />
+            60 &nbsp;echo $teacher->greet() . ", " . $teacher->job() . "\n";
+            <br />
+            61 } <br />
+            62 <br />
+            63 // Output of program: <br />
+            64 // Students: <br />
+            65 // Hello, my name is Alice, I learn Computer Science <br />
+            66 // Hello, my name is Bob, I learn Computer Science <br />
+            67 // Hello, my name is Charlie, I learn Business Studies <br />
+            68 // Teachers: <br />
+            69 // Hello, my name is Dan, I teach Computer Science, Information
+            Security <br />
+            70 // Hello, my name is Erin, I teach Computer Science, 3D Graphics
+            Programming <br />
+            71 // Hello, my name is Frankie, I teach Online Marketing, Business
+            Studies, E-commerce</code
+          >
+          <p>
+            The visibility of PHP properties and methods is defined using the
+            keywords:
+          </p>
+          <ul>
+            <li><span>public</span>,</li>
+            <li><span>private</span>,</li>
+            <li><span>protected</span>.</li>
+          </ul>
+          <p>
+            The default is public, if only var is used; <span>var</span> is a
+            synonym for <span>public</span>. Items declared
+            <span>public</span> can be accessed everywhere.
+            <span>protected</span> limits access to inherited classes (and to
+            the class that defines the item). <span>private</span> limits
+            visibility only to the class that defines the item. Objects of the
+            same type have access to each other's private and protected members
+            even though they are not the same instance.
+          </p>
+        </section>
+        <br />
+        <br />
+        <section class="main-section" id="Reference">
+          <header>
+            Reference
+          </header>
+          <p>
+            All the documentation in this page is taken from
+            <a
+              id="wiki"
+              href="https://en.wikipedia.org/wiki/PHP"
+              target="_blank"
+              >Wikipedia</a
+            >
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
